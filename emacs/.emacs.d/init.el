@@ -14,11 +14,13 @@
 ;; (eval-when-compile
 ;;   (require 'use-package))
 
-(dolist (package '(evil soothe-theme))
+(dolist (package '(evil soothe-theme neotree))
  (unless (package-installed-p package)
    (package-install package))
    (require package))
 
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
 
 (load-theme 'soothe t)
 (evil-mode 1)
