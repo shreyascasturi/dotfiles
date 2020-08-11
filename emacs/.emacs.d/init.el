@@ -7,20 +7,18 @@
 (package-initialize)
 
 ;; use-package enabled
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+;; (unless (package-installed-p 'use-package)
+;;   (package-refresh-contents)
+;;   (package-install 'use-package))
 
-(eval-when-compile
-  (require 'use-package))
+;; (eval-when-compile
+;;   (require 'use-package))
 
 (dolist (package '(evil soothe-theme))
  (unless (package-installed-p package)
    (package-install package))
    (require package))
 
-(use-package paredit
-    :ensure t)
 
 (load-theme 'soothe t)
 (evil-mode 1)
